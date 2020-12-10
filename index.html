@@ -1,104 +1,142 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8" />
-    <title>My First Function</title>
-  </head>
-  <body>
-    <h1>Open the console to see the magic!</h1>
-​
-    <script>
-      // FUNCTIONS
-      // ================================================================================
-      // Create a Function called "adder" that take three arguments (x, y, z).
-      // The function should add the arguments together, and log the result to the console.
-      // VOID FUNCTION - Doesn't return anything.
-      // var arrayOfChoices = ["r", "p", "s"];
-      // var randomNumber = Math.floor(Math.random() * 3);
-      // var computerChoice = arrayOfChoices[randomNumber];
-      // var userChoice = prompt("Enter 'r', 'p', or 's'");
-      // console.log("Computer Choice: ", computerChoice);
-      // console.log("User choice: ", userChoice);
-      // if (userChoice === computerChoice) {
-      //   alert("You tied!");
+
+<head>
+  <meta charset="UTF-8" />
+  <title>My First Function</title>
+</head>
+
+<body>
+  <h1>Open the console to see the magic!</h1>
+  ​
+  <script>
+    /*  WHEN I click the button to generate a password
+      (make a button)
+ 
+      THEN I am presented with a series of prompts for password criteria
+      alert("You will now be prompted for the password criteria.")
+ 
+      WHEN prompted for password criteria THEN I select which criteria to include in the password
+      WHEN prompted for the length of the password THEN I choose a length of at least 8 characters and no more than 128 characters
+      prompt("choose the length of your password, no shorter than 8 characters, and no longer than 128 characters");
+      declare variable passwordLength (number)
+
+      WHEN prompted for character types to include in the password THEN I choose lowercase, uppercase, numeric, and/or special characters WHEN I answer each prompt
+      
+      var includeLowercase confirm("Would you like to include lowercase letters?");
+      if (includeLowercase === true) {
+        alert("Okay!  I will include lowercase letters!");
+      }
+      var includeUppercase confirm("Would you like to include uppercase letters?");
+      if (includeUppercase === true) {
+        alert("Okay!  I will include include uppercase letters!");
+      }
+      var includeNumbers confirm("Would you like to include numbers?");
+      if (includeNumbers === true) {
+        alert("Okay!  I will include numbers!");
+      }
+      var includeSpecialcharacter confirm("Would you like to include special characters?");
+
+      THEN my input should be validated and at least one character type should be selected
+      if all booleans = false, throw an error
+
+      WHEN all prompts are answered THEN a password is generated that matches the selected criteria
+      WHEN the password is generated THEN the password is either displayed in an alert or written to the page 
+      alert("your password is..." )
+
+
+    // FUNCTIONS
+    // ================================================================================
+    // Create a Function called "adder" that take three arguments (x, y, z).
+    // The function should add the arguments together, and log the result to the console.
+    // VOID FUNCTION - Doesn't return anything.
+    // var arrayOfChoices = ["r", "p", "s"];
+    // var randomNumber = Math.floor(Math.random() * 3);
+    // var computerChoice = arrayOfChoices[randomNumber];
+    // var userChoice = prompt("Enter 'r', 'p', or 's'");
+    // console.log("Computer Choice: ", computerChoice);
+    // console.log("User choice: ", userChoice);
+    // if (userChoice === computerChoice) {
+    //   alert("You tied!");
+    // }
+
+    function adder(x, y, z) {
+      var result = x + y + z;
+      console.log(result);
+    }
+    // Create a Function called "multiplier" that takes three arguments (x, y, z).
+    // The function should multiply the arguments, and log the result to the console.
+    function multiplier(x, y, z) {
+      var result = x * y * z;
+      console.log(result);
+    }
+    // Create a Function called "isString" that takes three arguments (x, y, z).
+    // "isString" determines if all three arguments are strings and logs an appropriate response to the console.
+    function isString(x, y, z) {
+      if (
+        typeof x === "string" &&
+        typeof y === "string" &&
+        typeof z === "string"
+      ) {
+        console.log("All three are strings!");
+      } else {
+        console.log("Oops! Something isn't a string.");
+      }
+    }
+    // Create a Function called "vowelChecker" that takes in a single argument (x).
+    // "vowelChecker" logs whether or not the input is a vowel.
+    function vowelChecker(x) {
+      // if (x === "a" || x === "e" || x === "i" || x === "o" || x === "u") {
+      //   console.log("That is a vowel!");
+      // } else {
+      //   console.log("That is not a vowel.");
       // }
-    
-      function adder(x, y, z) {
-        var result = x + y + z;
-        console.log(result);
+      var arrayOfVowels = ["a", "e", "i", "o", "u"];
+      // for(var i = 0; i < arrayOfVowels.length; i++){
+      //     if(x === arrayOfVowels[i]){
+      //         console.log("That is a vowel!");
+      //     }
+      // }
+      var vowelPosition = arrayOfVowels.indexOf(x);
+      if (vowelPosition === -1) {
+        console.log("That's not a vowel.");
+      } else {
+        console.log("That is a vowel!");
       }
-      // Create a Function called "multiplier" that takes three arguments (x, y, z).
-      // The function should multiply the arguments, and log the result to the console.
-      function multiplier(x, y, z) {
-        var result = x * y * z;
-        console.log(result);
-      }
-      // Create a Function called "isString" that takes three arguments (x, y, z).
-      // "isString" determines if all three arguments are strings and logs an appropriate response to the console.
-      function isString(x, y, z) {
-        if (
-          typeof x === "string" &&
-          typeof y === "string" &&
-          typeof z === "string"
-        ) {
-          console.log("All three are strings!");
-        } else {
-          console.log("Oops! Something isn't a string.");
-        }
-      }
-      // Create a Function called "vowelChecker" that takes in a single argument (x).
-      // "vowelChecker" logs whether or not the input is a vowel.
-      function vowelChecker(x) {
-        // if (x === "a" || x === "e" || x === "i" || x === "o" || x === "u") {
-        //   console.log("That is a vowel!");
-        // } else {
-        //   console.log("That is not a vowel.");
-        // }
-        var arrayOfVowels = ["a", "e", "i", "o", "u"];
-        // for(var i = 0; i < arrayOfVowels.length; i++){
-        //     if(x === arrayOfVowels[i]){
-        //         console.log("That is a vowel!");
-        //     }
-        // }
-        var vowelPosition = arrayOfVowels.indexOf(x);
-        if (vowelPosition === -1) {
-          console.log("That's not a vowel.");
-        } else {
-          console.log("That is a vowel!");
-        }
-      }
-      // BONUS
-      // Creates a version of "adder" that returns its result. Function is called "adderReturn".
-      function adderReturn(numOne, numTwo) {
-        var result = numOne + numTwo;
-        return result;
-      }
-      var mySum = adderReturn(1, 2);
+    }
+    // BONUS
+    // Creates a version of "adder" that returns its result. Function is called "adderReturn".
+    function adderReturn(numOne, numTwo) {
+      var result = numOne + numTwo;
+      return result;
+    }
+    var mySum = adderReturn(1, 2);
     //   console.log(mySum);
     // Creates a version of "multiplier" that returns its result. Function is called "multiplierReturn".
     function multiplierReturn(numOne, numTwo) {
-        var result = numOne * numTwo;
-        return result;
-      }
-      var myProduct = multiplierReturn(2, 3);
-      // FUNCTION EXECUTION
-      // ================================================================================
-      // Add in the lines of code below necessary to call the functions we created above.
-      // Call the adder function here.
-      adder(1798, 3254855, 22);
-      console.log("-------------------");
-      // Call the multiplier function here.
-      multiplier(2, 4, 6);
-      console.log("-------------------");
-      // Call the isString function here.
-      isString("something", "else", "string");
-      console.log("-------------------");
-      // Call the vowelChecker function here.​
-      console.log("-------------------");
-      // BONUS
-      // Call the adderReturn function here and set it equal to a variable. Then log that variable to the console.
-      console.log("-------------------");
+      var result = numOne * numTwo;
+      return result;
+    }
+    var myProduct = multiplierReturn(2, 3);
+    // FUNCTION EXECUTION
+    // ================================================================================
+    // Add in the lines of code below necessary to call the functions we created above.
+    // Call the adder function here.
+    adder(1798, 3254855, 22);
+    console.log("-------------------");
+    // Call the multiplier function here.
+    multiplier(2, 4, 6);
+    console.log("-------------------");
+    // Call the isString function here.
+    isString("something", "else", "string");
+    console.log("-------------------");
+    // Call the vowelChecker function here.​
+    console.log("-------------------");
+    // BONUS
+    // Call the adderReturn function here and set it equal to a variable. Then log that variable to the console.
+    console.log("-------------------");
       // Call the multiplierReturn function here and set it equal to a variable. Then log that variable to the console.
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>
