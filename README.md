@@ -41,6 +41,7 @@ I was not able to concatenate the characters as of the time of this submission, 
 I was able to write all values to the console.
 
 The link to the deployed site is:
+https://ashadria1.github.io/random-password-generator/
 
 Here is a screenshot of the application in action:
 assets\PwdGenscreenshot.PNG
