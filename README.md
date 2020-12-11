@@ -1,15 +1,16 @@
 # random-password-generator
-random password generator in javascript
-Create an application that an employee can use to generate a random password based on criteria they have selected by modifying starter code. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
-The password can include special characters. If you’re unfamiliar with these, see this list of Password Special Characters from the OWASP Foundation. 
-(https://www.owasp.org/index.php/Password_special_characters).
 
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
+This application is a simple design for a random password generator in javascript.
 
-## Acceptance Criteria
+Based on the four criteria, a random number is generated to randomly select a criteria to choose from.  
 
+Then, a random number is generated to select a random element from that array, incrementing the character count each time.
+
+Repeat until the character count is equal to the user defined password length.
+
+Then, concatenate the resulting characters into a final string.
+
+Criteria:
 GIVEN I need a new, secure password
 WHEN I click the button to generate a password
 THEN I am presented with a series of prompts for password criteria
@@ -27,32 +28,19 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 
 
-## Grading Requirements
-This homework is graded based on the following criteria: 
+I was able to generate random numbers with no problem, but apparently am missing something in the syntax to make my if-else statements work.  Instead of grabbing an array at random, it seemed to either go through all four criteria, or only one, depending on what code I used.  
 
-### Technical Acceptance Criteria: 40%
-* Satisfies all of the above acceptance criteria plus the following:
-  * The homework should not produce any errors in the console when you inspect it using Chrome DevTools.
+The incrementing of the character count was supposed to keep pace with the selection of a character, but for some reason changes depending on whether I use multiple if statements vs. if-else statements.  
 
-### Deployment: 32%
-* Application deployed at live URL.
-* Application loads with no errors.
-* Application GitHub URL submitted.
-* GitHub repository that contains application code.
+Else-if seems to generate random numbers fine, but pulls all characters from one array.
 
-### Application Quality: 15
-* Application user experience is intuitive and easy to navigate.
-* Application user interface style is clean and polished.
-* Application resembles the mock-up functionality provided in the homework instructions.
+If seems to generate random numbers fine, but pulls from all arrays equally, and in succession.  I hope to figure this one out.
 
-### Repository Quality: 13%
-* Repository has a unique name.
-* Repository follows best practices for file structure and naming conventions.
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-* Repository contains multiple descriptive commit messages.
-* Repository contains quality README file with description, screenshot, and link to deployed application.
+I was not able to concatenate the characters as of the time of this submission, but hope to add it in the future.
 
-## Review
-You are required to submit the following for review:
-* The URL of the deployed application.
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+I was able to write all values to the console.
+
+The link to the deployed site is:
+
+Here is a screenshot of the application in action:
+assets\PwdGenscreenshot.PNG

@@ -87,7 +87,7 @@
       return Math.floor(Math.random() * (max - min)) + min;
     }
 
-    for (computerCharacterChoiceCount = 0; computerCharacterChoiceCount <= userDefinedPasswordLength; computerCharacterChoiceCount++) 
+    for (computerCharacterChoiceCount = 0; computerCharacterChoiceCount < userDefinedPasswordLength; computerCharacterChoiceCount++) 
     {
       var randomNumber4 = getRndInteger(1, 4);
       console.log("Random number between 1-4 generated:");
@@ -130,12 +130,10 @@
             var computerCharacterChoice = arrayOfSpecialCharacters[randomNumber32];
             console.log(computerCharacterChoice);
             specialCharactersChoiceCount++;
-                  
-      }
-      
-      
+                
+      }      
     }
-    
+    console.log("Total Computer Character Choice Count: " + computerCharacterChoiceCount);
     console.log("Lowercase count: " + lowercaseChoiceCount);
     console.log("Uppercase count: " + uppercaseChoiceCount);
     console.log("Number count: " + numbersChoiceCount);
