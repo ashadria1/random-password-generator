@@ -14,10 +14,11 @@
     var computerCharacterChoice;
     var computerGeneratedPassword;
     var computerCharacterChoiceCount = 0;
-    var criteriaCount = 0;
-    var passwordLength = 0;
-    var randomNumber = 0;
-    var arrayOfArrayChoices = 0;
+    var lowercaseChoiceCount = 0;
+    var uppercaseChoiceCount = 0;
+    var numbersChoiceCount = 0;
+    var specialCharactersChoiceCount = 0;
+    var userDefinedPasswordLength = 0;
     var includeLowercase = false;
     var includeUppercase = false;
     var includeNumbers = false;
@@ -26,126 +27,130 @@
     var arrayOfUpperCaseChoices = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     var arrayOfNumberChoices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
     var arrayOfSpecialCharacters = ["!", "“", "”", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
+    var arrayOfArrayChoices = [arrayOfLowerCaseChoices, arrayOfUpperCaseChoices, arrayOfNumberChoices, arrayOfSpecialCharacters];
+    
+    console.log("Variables Declared");
 
-    //Gather and validate user inputs.
+    var userDefinedPasswordLength = prompt("If you would like to generate a random password, please enter a number indicating password length, between 16 and 128 characters.");
 
-    var passwordLength = prompt("Please enter a number indicating password length, between 16 and 128 characters.");
-    if (passwordLength < 16) {
-      alert("You must choose a number between 16 and 128!  That number is less than 16!  Please refresh the page and start over!"), 
-      location.assign();
-    } else if (passwordLength > 128) {
+    if (userDefinedPasswordLength < 16) {
+      alert("You must choose a number between 16 and 128!  That is not a valid number!  Please refresh the page and start over!");
+      window.stop;
+    }
+    else if (userDefinedPasswordLength > 128) {
       alert("You must choose a number between 16 and 128!  That number is greater than 128!  Please refresh the page and start over!");
-      location.assign();
-    } else {alert("Thank you for choosing a valid number!")}
+      window.stop;
+    }
+    else {
+      alert("Thank you for choosing a valid number!");
+    }
 
     var includeLowercase = confirm("Would you like to include lowercase letters in your password?");
     if (includeLowercase === true) {
       alert("Okay!  Lowercase letters will be included in your password!");
-      criteriaCount++;
-    } else {alert("Okay!  Lowercase letters will NOT be included in your password!")}
+    }
+    else {
+      alert("Okay!  Lowercase letters will NOT be included in your password!");
+    }
 
     var includeUppercase = confirm("Would you like to include uppercase letters?");
     if (includeUppercase === true) {
       alert("Okay!  Uppercase letters will be included in your password!");
-      criteriaCount++;
-    } else {alert("Okay!  Uppercase letters will NOT be included in your password!")}
+    }
+    else {
+      alert("Okay!  Uppercase letters will NOT be included in your password!");
+    }
 
     var includeNumbers = confirm("Would you like to include numbers?");
     if (includeNumbers === true) {
       alert("Okay!  Numbers will be included in your password!");
-      criteriaCount++;
-    } else {alert("Okay!  Numbers will NOT be included in your password!")}
+    }
+    else {
+      alert("Okay!  Numbers will NOT be included in your password!");
+    }
 
     var includeSpecialCharacters = confirm("Would you like to include special characters?");
     if (includeSpecialCharacters === true) {
       alert("Okay!  Special characters will be included in your password!");
-      criteriaCount++;
-    } else {alert("Okay!  Special characters will NOT be included in your password!")}
+    }
+    else {
+      alert("Okay!  Special characters will NOT be included in your password!");
+    }
 
     if (includeLowercase === false && includeUppercase === false && includeNumbers === false && includeSpecialCharacters === false) {
       alert("You must pick at least one criteria!  Please refresh page and start over!");
-      location.assign();
+      window.stop;
     }
-
-    // Process user inputs.
-
-    // for "passWordLength" times...
-    // while computerCharacterChoiceCount < passwordLength
-
-    // if criteriaCount = 4, generate random number between 1 and 4 to determine which random array to pull from.
-    // arrayOfArrayChoices indicates which random array to pull from.
-    // var computerCharacterChoice = arrayOfArrayChoices[randomNumber];
+    console.log("User Inputs Received");
     
-    // function (random array chooser)
-    // var randomNumber = Math.floor(Math.random() * 4);  
-    // if (randomNumber = 1) && includeLowercase = true {choose a character from arrayOfLowerCaseChoices
-    // var randomNumber = Math.floor(Math.random() * 26);
-    // computerCharacterChoiceCount++
-    // else if (randomNumber = 2) && includeUppercase = true {choose a character from arrayOfUpperCaseChoices
-    // var randomNumber = Math.floor(Math.random() * 26);
-    // computerCharacterChoiceCount++
-    // else if (randomNumber = 3) && includeNumbers = true {choose a character from arrayOfNumberChoices
-    // var randomNumber = Math.floor(Math.random() * 10);
-    // computerCharacterChoiceCount++
-    // else if (randomNumber = 4) && includeSpecialCharacters = true (choose a character from arrayOfSpecialCharacters
-    // var randomNumber = Math.floor(Math.random() * 32);
-    // computerCharacterChoiceCount++
+    function getRndInteger(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
 
+    for (computerCharacterChoiceCount = 0; computerCharacterChoiceCount <= userDefinedPasswordLength; computerCharacterChoiceCount++) 
+    {
+      var randomNumber4 = getRndInteger(1, 4);
+      console.log("Random number between 1-4 generated:");
+      console.log(randomNumber4);
+            
+      if (randomNumber4 = 1 && includeLowercase === true) {
+            console.log("The computer picked (1) the lowercase array.  The computer picked index:");
+            randomNumber26 = getRndInteger(0, 25);
+            console.log(randomNumber26);
+            var computerCharacterChoice = arrayOfLowerCaseChoices[randomNumber26];
+            console.log(computerCharacterChoice);
+            lowercaseChoiceCount++;
+                     
+      }
+          
+      else if (randomNumber4 = 2 && includeUppercase === true) {
+            console.log("The computer picked (2) the uppercase array.  The computer picked index:");
+            randomNumber26 = getRndInteger(0, 25);
+            console.log(randomNumber26);
+            var computerCharacterChoice = arrayOfUpperCaseChoices[randomNumber26];
+            console.log(computerCharacterChoice);
+            uppercaseChoiceCount++;
+                   
+      }
+    
+      else if (randomNumber4 = 3 && includeNumbers === true) {
+            console.log("The computer picked (3) the number array.  The computer picked index:");
+            randomNumber10 = getRndInteger(0, 9);
+            console.log(randomNumber10);
+            var computerCharacterChoice = arrayOfNumberChoices[randomNumber10];
+            console.log(computerCharacterChoice);
+            numbersChoiceCount++;
+                  
+      }
+    
+      else if (randomNumber4 = 4 && includeSpecialCharacters === true) {
+            console.log("The computer picked (4) the special characters array.  The computer picked index:");
+            randomNumber32 = getRndInteger(0, 31);
+            console.log(randomNumber32);
+            var computerCharacterChoice = arrayOfSpecialCharacters[randomNumber32];
+            console.log(computerCharacterChoice);
+            specialCharactersChoiceCount++;
+                  
+      }
+      
+      
+    }
+    
+    console.log("Lowercase count: " + lowercaseChoiceCount);
+    console.log("Uppercase count: " + uppercaseChoiceCount);
+    console.log("Number count: " + numbersChoiceCount);
+    console.log("Special character count: " + specialCharactersChoiceCount);
+    console.log("Hello world.  That's it!");
+    
+
+    // Concatenate all computerCharacterChoice variables into a computerGeneratedPassword string.
     // console.log("Your randomly computer-generated password is: ", computerGeneratedPassword);
+    // console.log(computerGeneratedPassword);
+    // alert("Your password is..." + computerGeneratedPassword + ".");
+    
+    alert("In case you're keeping score, the computer picked " + lowercaseChoiceCount + " lowercase letters, " + uppercaseChoiceCount + " uppercase letters, " + numbersChoiceCount + " numbers, " + specialCharactersChoiceCount + " special characters.");
+ 
 
-    // String together all ComputerChoice variables into a computerGeneratedPassword string.
-        
-    console.log(computerGeneratedPassword);
-    alert("Your password is..." + computerGeneratedPassword);
-
-      // var randomNumber = Math.floor(Math.random() * 3);
-      // var computerChoice = arrayOfChoices[randomNumber];
-
-      function adder(x, y, z) {
-      var result = x + y + z;
-      console.log(result);
-    }
-      // Create a Function called "multiplier" that takes three arguments (x, y, z).
-      // The function should multiply the arguments, and log the result to the console.
-      function multiplier(x, y, z) {
-      var result = x * y * z;
-      console.log(result);
-    }
-      // Create a Function called "isString" that takes three arguments (x, y, z).
-      // "isString" determines if all three arguments are strings and logs an appropriate response to the console.
-      function isString(x, y, z) {
-      if (
-        typeof x === "string" &&
-        typeof y === "string" &&
-        typeof z === "string"
-      ) {
-        console.log("All three are strings!");
-      } else {
-        console.log("Oops! Something isn't a string.");
-      }
-    }
-      // Create a Function called "vowelChecker" that takes in a single argument (x).
-      // "vowelChecker" logs whether or not the input is a vowel.
-      function vowelChecker(x) {
-      // if (x === "a" || x === "e" || x === "i" || x === "o" || x === "u") {
-      //   console.log("That is a vowel!");
-      // } else {
-      //   console.log("That is not a vowel.");
-      // }
-      var arrayOfVowels = ["a", "e", "i", "o", "u"];
-      // for(var i = 0; i < arrayOfVowels.length; i++){
-      //     if(x === arrayOfVowels[i]){
-      //         console.log("That is a vowel!");
-      //     }
-      // }
-      var vowelPosition = arrayOfVowels.indexOf(x);
-      if (vowelPosition === -1) {
-        console.log("That's not a vowel.");
-      } else {
-        console.log("That is a vowel!");
-      }
-    }
-  
   </script>
 </body>
 
