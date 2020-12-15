@@ -27,17 +27,15 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 
-I was able to generate random numbers with no problem, but apparently am missing something in the syntax to make my if-else statements work. Instead of grabbing an array at random, it seemed to either go through all four criteria, or only one, depending on what code I used.
+First, I generated a random number between 1 and 4, corresponding to the four different criteria (lowercase, uppercase, numbers, and special characters).  If they selected that particular criteria, a random number was then generated to pull a random element from that particular array, and then incrementing that individual criteria choice count.  If not, it moves to the next if statement to see if that criteria is met (whether or not they selected that criteria).
 
-The incrementing of the character count was supposed to keep pace with the selection of a character, but for some reason changes depending on whether I use multiple if statements vs. if-else statements.
+At first, I was able to generate random numbers between 1 and 4 with no problem, but was apparently missing something in the syntax and/or logic that prevented my if-else statements from working. Instead of grabbing an array at random, it seemed to either go through all four criteria equally, or only one criteria, depending on what code I used (if or if else, etc.), until or before it reached the length of the user defined password. 
 
-Else-if seems to generate random numbers fine, but pulls all characters from one array.
+As it turns out, the incrementing of the character choice count had to be separated from the total sum of all individual character choices, so that the function would run until the total number of individual criteria character counts equal the length of the user defined password, and not the ATTEMPTS to find a character that fits the criteria, or the character choice count.
 
-If seems to generate random numbers fine, but pulls from all arrays equally, and in succession. I hope to figure this one out.
+I was able to concatenate the characters by using the document write() function, which automatically concatenates the characters.
 
-I was not able to concatenate the characters as of the time of this submission, but hope to add it in the future.
-
-I was able to write all values to the console.
+I was able to write all steps and values to the console.
 
 The link to the deployed site is:
 https://ashadria1.github.io/random-password-generator/
