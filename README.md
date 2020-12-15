@@ -43,4 +43,4 @@ The link to the deployed site is:
 https://ashadria1.github.io/random-password-generator/
 
 Here is a screenshot of the application in action:
-assets\PwdGenscreenshot.PNG
+assets\PwdGenscreenshot2.PNG
