@@ -33,6 +33,8 @@ At first, I was able to generate random numbers between 1 and 4 with no problem,
 
 As it turns out, the incrementing of the character choice count had to be separated from the total sum of all individual character choices, so that the function would run until the total number of individual criteria character counts equal the length of the user defined password, and not the ATTEMPTS to find a character that fits the criteria, or the character choice count.
 
+I also needed to update my syntax to "===" instead of "=" to make my logic work.
+
 I was able to concatenate the characters by using the document write() function, which automatically concatenates the characters.
 
 I was able to write all steps and values to the console.
