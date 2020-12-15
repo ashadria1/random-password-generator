@@ -2,7 +2,7 @@
 
 This application is a simple design for a random password generator in javascript.
 
-Based on the four criteria, a random number is generated to randomly select a criteria to choose from.  
+Based on the four criteria, a random number is generated to randomly select a criteria to choose from.
 
 Then, a random number is generated to select a random element from that array, incrementing the character count each time.
 
@@ -27,14 +27,13 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 
+I was able to generate random numbers with no problem, but apparently am missing something in the syntax to make my if-else statements work. Instead of grabbing an array at random, it seemed to either go through all four criteria, or only one, depending on what code I used.
 
-I was able to generate random numbers with no problem, but apparently am missing something in the syntax to make my if-else statements work.  Instead of grabbing an array at random, it seemed to either go through all four criteria, or only one, depending on what code I used.  
-
-The incrementing of the character count was supposed to keep pace with the selection of a character, but for some reason changes depending on whether I use multiple if statements vs. if-else statements.  
+The incrementing of the character count was supposed to keep pace with the selection of a character, but for some reason changes depending on whether I use multiple if statements vs. if-else statements.
 
 Else-if seems to generate random numbers fine, but pulls all characters from one array.
 
-If seems to generate random numbers fine, but pulls from all arrays equally, and in succession.  I hope to figure this one out.
+If seems to generate random numbers fine, but pulls from all arrays equally, and in succession. I hope to figure this one out.
 
 I was not able to concatenate the characters as of the time of this submission, but hope to add it in the future.
 
