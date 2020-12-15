@@ -131,12 +131,15 @@
         console.log("The computer did not pick (4) this round, or you did not want special characters.");
       }
     }
+    var totalIndividualChoices = (lowercaseChoiceCount + uppercaseChoiceCount + numbersChoiceCount + specialCharactersChoiceCount);
     console.log("Total Computer Character Choice Count: " + computerCharacterChoiceCount);
+    console.log("Failed attempts to find a random character: " + (computerCharacterChoiceCount - totalIndividualChoices));
     console.log("Lowercase count: " + lowercaseChoiceCount);
     console.log("Uppercase count: " + uppercaseChoiceCount);
     console.log("Number count: " + numbersChoiceCount);
     console.log("Special character count: " + specialCharactersChoiceCount);
     console.log("Total character count: " + (lowercaseChoiceCount + uppercaseChoiceCount + numbersChoiceCount + specialCharactersChoiceCount));
+
     console.log("We made it!");
 
     alert("In case you're keeping score, the computer picked " + lowercaseChoiceCount + " lowercase letters, " + uppercaseChoiceCount + " uppercase letters, " + numbersChoiceCount + " numbers, " + specialCharactersChoiceCount + " special characters.");
